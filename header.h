@@ -13,6 +13,11 @@
 #include <linux/uaccess.h>
 #include <linux/slab.h>
 #include <linux/string.h>
+#include <linux/fs.h>
+#include <linux/device.h>
+#include <linux/interrupt.h>
+#include <linux/delay.h>
+#include <linux/gpio.h>
 /*
   ===================================
   DRIVER INFO
@@ -22,7 +27,7 @@
 #define DRIVER_AUTHOR "Vishal Chopra"
 #define DRIVER_DESC "GPIO driver for BBB"
 #define DRIVER_NAME "bbbgpio"
-#define DEVICE_CLASS_NAME "bbbgpio_class"
+#define DEVICE_CLASS_NAME "bbbgpio_class_new"
 #define DEVICE_PROCESS "bbbgpio%d"
 /*
   ===================================

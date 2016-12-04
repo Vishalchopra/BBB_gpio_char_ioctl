@@ -6,19 +6,19 @@
 
 
 #include "header.h"
-
+#include "declaration.h"
 static void __exit bbbgpio_exit(void)
 {
-	if(bbbgpio_Ptr != NULL){
+	if(bbbgpio_device_Ptr != NULL){
 		device_destroy(bbbclass_Ptr, MKDEV(MAJOR(bbb_dev), 0));
-		cdev_del(bbbgpio_Ptr->cdev);
-		kfree(bbbgpio_Ptr);
-		bbbgpio_Ptr = NULL:
+		cdev_del(&bbbgpio_device_Ptr->cdev);
+		kfree(bbbgpio_device_Ptr);
+		bbbgpio_device_Ptr = NULL;
 	}
 	
 	if(bbbclass_Ptr != NULL)
 	{	
-       		class_destroy(bbbgpio_device_ptr);
+       		class_destroy(bbbclass_Ptr);
 		bbbclass_Ptr = NULL;
 	}
 
