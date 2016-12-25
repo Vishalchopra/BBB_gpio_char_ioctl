@@ -16,3 +16,4 @@ extern struct bbbgpio_device *bbbgpio_device_Ptr;
 extern struct class *bbbclass_Ptr;
 extern dev_t bbb_dev;
 int bbbgpio_open(struct inode *, struct file *);
+static long bbbgpio_ioctl(struct file *, unsigned int, unsigned long);
