@@ -10,7 +10,7 @@
 int bbbgpio_open(struct inode *inode, struct file *file)
 {
 	driver_info("%s OPEN\n", DRIVER_NAME);
-	if(mutex_trylock(&bbbgpio_device_Ptr->io_mutex) == 0){
+	if(mutex_trylock(&bbbgpio_device_Ptr->io_mutex == 0)){
 		driver_err("%s Unable to aquire mutex\n", DRIVER_NAME);
 		return -EBUSY;
 	}	
